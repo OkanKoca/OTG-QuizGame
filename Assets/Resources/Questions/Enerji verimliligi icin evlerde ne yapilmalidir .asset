@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
+  m_Name: 'Enerji verimliligi icin evlerde ne yapilmalidir '
+  m_EditorClassIdentifier: 
+  question: "Enerji verimlili\u011Fi i\xE7in evlerde ne yap\u0131lmal\u0131d\u0131r? "
+  category: KOLAY
+  answers:
+  - "LED Amp\xFCl Kullan\u0131m\u0131 "
+  - "Klimalar\u0131 s\xFCrekli a\xE7\u0131k b\u0131rakma"
+  - "Eski cihaz kullan\u0131m\u0131"
+  - "Is\u0131 yal\u0131t\u0131ms\u0131z binalar kullan\u0131m\u0131"

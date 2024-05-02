@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
+  m_Name: Hangisi surdurulebilirligin temel boyutlarindan olan cevresel surdurulebilirligin
+    ana temalarindan biri degildir
+  m_EditorClassIdentifier: 
+  question: "Hangisi s\xFCrd\xFCr\xFClebilirli\u011Fin temel boyutlar\u0131ndan olan
+    \xE7evresel s\xFCrd\xFCr\xFClebilirli\u011Fin ana temalar\u0131ndan biri de\u011Fildir?"
+  category: ORTA
+  answers:
+  - Sosyal adalet
+  - "At\u0131k y\xF6netimi"
+  - "Do\u011Fal kaynaklar\u0131n kullan\u0131m\u0131"
+  - "Enerji verimlili\u011Fi"

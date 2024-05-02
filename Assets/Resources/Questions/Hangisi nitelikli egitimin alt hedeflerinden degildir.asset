@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
+  m_Name: Hangisi nitelikli egitimin alt hedeflerinden degildir
+  m_EditorClassIdentifier: 
+  question: "Hangisi nitelikli e\u011Fitimin alt hedeflerinden de\u011Fildir?"
+  category: ORTA
+  answers:
+  - "Evrensel yasal kimlik sa\u011Flanmas\u0131"
+  - "\xDCcretsiz ilk ve orta e\u011Fitim"
+  - "Evrensel okuryazarl\u0131k ve say\u0131 bilgisi"
+  - "Finansal ba\u015Far\u0131 i\xE7in ilgili niteliklere sahip insan say\u0131s\u0131n\u0131n
+    art\u0131r\u0131lmas\u0131"

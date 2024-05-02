@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
+  m_Name: Surdurulebilir Kalkinma hedefleri arasinda asagidakilerden hangisi yoktur
+  m_EditorClassIdentifier: 
+  question: "S\xFCrd\xFCr\xFClebilir Kalk\u0131nma hedefleri aras\u0131nda a\u015Fa\u011F\u0131dakilerden
+    hangisi yoktur?"
+  category: ZOR
+  answers:
+  - "\u0130ktisadi Kalk\u0131nman\u0131n H\u0131zland\u0131r\u0131lmas\u0131"
+  - "Yoksullu\u011Fun Azalt\u0131lmas\u0131"
+  - "Nitelikli E\u011Fitim"
+  - "\u0130klim De\u011Fi\u015Fikli\u011Fi ile m\xFCcadele"

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
+  m_Name: Su ayak izi nedir
+  m_EditorClassIdentifier: 
+  question: Su ayak izi nedir?
+  category: ZOR
+  answers:
+  - "Bir \xFCr\xFCn\xFCn \xFCretiminden t\xFCketimine kadar olan s\xFCre\xE7te t\xFCketti\u011Fi
+    toplam su miktar\u0131"
+  - "Bir \xFClkenin su kaynaklar\u0131n\u0131 koruma \xE7abas\u0131"
+  - "Bir bireyin g\xFCnl\xFCk i\xE7me suyu t\xFCketimi"
+  - "Su kirlili\u011Fi seviyesi"
