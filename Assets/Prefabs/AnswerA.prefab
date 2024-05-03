@@ -128,7 +128,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -91.0589, y: 0, z: 180.58044, w: 0}
+  m_margin: {x: -84.62311, y: 0, z: 180.58044, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -281,4 +281,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answerText: {fileID: 1783303074460234161}
+  scoreText: {fileID: 0}
   questionSetup: {fileID: 0}

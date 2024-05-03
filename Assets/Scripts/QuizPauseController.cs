@@ -9,7 +9,7 @@ public class QuizPauseController : MonoBehaviour
     public bool isPaused = false;
     public void PauseGame()
     {
-        
+        Time.timeScale = 0;
         pauseMenu.SetActive(true);
         isPaused = true;
         

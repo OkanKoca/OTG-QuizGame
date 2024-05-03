@@ -66,8 +66,8 @@ public class QuestionSetup : MonoBehaviour
     }
     private void Update() {
         StartCountdown();
-        correctAnswerNumber.text = "Correct: " + correctAnswerCount.ToString();
-        wrongAnswerNumber.text = "Wrong: "+ wrongAnswerCount.ToString();
+        correctAnswerNumber.text = "Doğru: " + correctAnswerCount.ToString();
+        wrongAnswerNumber.text = "Yanlış: "+ wrongAnswerCount.ToString();
         isFinished();
     }
 
@@ -180,8 +180,8 @@ public class QuestionSetup : MonoBehaviour
         
         if(questionNumber == 21)
         {
-            questionNumber = 20;
-            finalScoreText.text = "Total score: " + score;
+            questionNumberText.text = "20/20";
+            finalScoreText.text = "Toplam Skor: " + score;
             endGamePanel.SetActive(true);
             Time.timeScale = 0;
         }
