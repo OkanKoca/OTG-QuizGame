@@ -58,12 +58,6 @@ public class AnswerButton : MonoBehaviour
                 Debug.Log("kolay");
                 questionSetup.score -= 40;
             }
-            if(questionSetup.remainingTime == 0) // eğer zaman sıfır ise 20 puan eksiliyor ve yeni soru geliyor.
-            {
-                Debug.Log("zaman eksi puan");
-                questionSetup.score -= 20;
-                questionSetup.SelectNewQuestion();
-            }
             scoreText.text = questionSetup.score.ToString();
         }
 

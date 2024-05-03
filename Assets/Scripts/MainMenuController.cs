@@ -66,5 +66,6 @@ public class MainMenuController : MonoBehaviour
         howToPlayPanel.blocksRaycasts = false;
         creditsPanel.alpha = 0;
         creditsPanel.blocksRaycasts = false;
+        Time.timeScale = 1;
     }
 }

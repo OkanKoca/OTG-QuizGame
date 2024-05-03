@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using DentedPixel;
+using UnityEngine.UIElements;
 
 public class QuestionSetup : MonoBehaviour
 {
@@ -30,8 +31,13 @@ public class QuestionSetup : MonoBehaviour
     public TextMeshProUGUI correctAnswerNumber;
     public TextMeshProUGUI wrongAnswerNumber;
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI questionNumberText;
+    private int questionNumber = 0;
     public int score;
-    private bool isFailed = false;
+    [SerializeField] private TextMeshProUGUI finalScoreText;
+    [SerializeField] private GameObject endGamePanel;
+    [SerializeField] private GameObject mainGamePanel;
+    QuizPauseController quizPause;
 
     private void Awake()
     {
@@ -51,7 +57,6 @@ public class QuestionSetup : MonoBehaviour
         // Set all of the answer buttons text and correct answer values
         SetAnswerValues();
         
-        
     }
 
     private void GetQuestionAssets()
@@ -63,9 +68,10 @@ public class QuestionSetup : MonoBehaviour
         StartCountdown();
         correctAnswerNumber.text = "Correct: " + correctAnswerCount.ToString();
         wrongAnswerNumber.text = "Wrong: "+ wrongAnswerCount.ToString();
+        isFinished();
     }
 
-    public void SelectNewQuestion()
+    private void SelectNewQuestion()
     {
         // Get a random value for which question to choose
         int randomQuestionIndex = Random.Range(0, questions.Count);
@@ -73,10 +79,14 @@ public class QuestionSetup : MonoBehaviour
         currentQuestion = questions[randomQuestionIndex];
         // Remove this questionm from the list so it will not be repeared (until the game is restarted)
         questions.RemoveAt(randomQuestionIndex);
-        remainingTime = 30.5f;
-        requestedTime = 30;
+        remainingTime = 30.2f;
+        requestedTime = 29;
+        questionNumber++;
+        questionNumberText.text = questionNumber.ToString() + "/20";
         AnimateBar();
         StartCountdown();
+        SetQuestionValues();
+        SetAnswerValues();
     }
 
     private void SetQuestionValues()
@@ -142,29 +152,40 @@ public class QuestionSetup : MonoBehaviour
         LeanTween.cancel(timeBar);
         timeBar.transform.localScale = new Vector3(1f, timeBar.transform.localScale.y, timeBar.transform.localScale.z);
         LeanTween.scaleX(timeBar, 0, requestedTime); // x teki boyutunu requestedTime süresince küçültüyor.
+        // LeanTween.pause(timeBar);
     }
     public void StartCountdown() 
     {
-        if (remainingTime >= 1f )
+        if (remainingTime > 0f )
         {
             remainingTime -= Time.deltaTime; 
+                 
         }
-        else if (remainingTime <= 0.5f) // remaningTime sıfıra geldiğinde duruyor.
-            remainingTime = 0;
-        else if (remainingTime == 0)
-            isFailed = true;
-        
+        else
+        {
+            remainingTime = 0f;
+            score -= 20;
+            Debug.Log("zaman tükkkkkk");
+            scoreText.text = score.ToString();
+            SelectNewQuestion();
+        }
+            
         
         int seconds = Mathf.FloorToInt(remainingTime % 60); // float olan remainingTime 60 ile mod alıp tavana yuvarlanıp seconds eşitleniyor.
         
         timerText.text = string.Format("{0:00}", seconds); // text olarak saniyeyi yazıyoruz.
     }
-    public void isFail()
+    public void isFinished()
     {
         
-        if(isFailed)
+        if(questionNumber == 21)
         {
-            scoreText.text = "Total score: " + score;
+            questionNumber = 20;
+            finalScoreText.text = "Total score: " + score;
+            endGamePanel.SetActive(true);
+            Time.timeScale = 0;
         }
+        else 
+            Time.timeScale = 1;
     }
 }
