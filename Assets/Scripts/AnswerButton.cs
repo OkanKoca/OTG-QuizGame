@@ -4,15 +4,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Microsoft.Unity.VisualStudio.Editor;
+using UnityEngine.UI;
+using JetBrains.Annotations;
 
 public class AnswerButton : MonoBehaviour
 {
     private bool isCorrect;
     [SerializeField] private TextMeshProUGUI answerText;
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private Button button;
 
     // To make it ask a new question after the first question
     [SerializeField] private QuestionSetup questionSetup;
+    public Color startColor;
+    public Color correctColor = Color.green;
+    public Color wrongColor = Color.red;
+
+    private ColorBlock cb;
+
+    private void Start()
+    {
+        cb = button.colors;
+    }
+    private void Update()
+    {
+        if (isCorrect)
+        {
+            cb.pressedColor = correctColor;
+            Debug.Log("button color" );
+        }
+        else
+        {
+            cb.pressedColor = wrongColor;
+        }
+    }
 
     public void SetAnswerText(string newText)
     {
@@ -28,7 +54,7 @@ public class AnswerButton : MonoBehaviour
     {
         if(isCorrect)
         {
-             
+            cb.pressedColor = correctColor;
             Debug.Log("CORRECT ANSWER");
             questionSetup.correctAnswerCount += 1;
             if(questionSetup.currentQuestion.category == "KOLAY") // kolay soru +50 puan
@@ -51,6 +77,9 @@ public class AnswerButton : MonoBehaviour
         }
         else
         {
+            cb = button.colors;
+            cb.normalColor = startColor;
+            cb.pressedColor = wrongColor;
             Debug.Log("WRONG ANSWER");
             questionSetup.wrongAnswerCount += 1;
             if(questionSetup.currentQuestion.category == "KOLAY" || questionSetup.currentQuestion.category == "ORTA" || questionSetup.currentQuestion.category == "ZOR") // yanlış sorularda 40 puan eksiliyor.

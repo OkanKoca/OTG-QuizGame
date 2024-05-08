@@ -1793,8 +1793,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Koray Temizkan\nOkan Koca\nHilal\nNefise T\xFCrko\u011Flu\nMuhammed Emin
-    Kara\xE7ete\nYi\u011Fit Aykol"
+  m_text: "Koray Temizkan\nOkan Koca\nHilal K\u0131l\u0131n\xE7\nNefise T\xFCrko\u011Flu\nMuhammed
+    Emin Kara\xE7ete\nYi\u011Fit Aykol"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 654d62095ff292f4a96335c2d2e70a67, type: 2}
   m_sharedMaterial: {fileID: 67408867923391525, guid: 654d62095ff292f4a96335c2d2e70a67, type: 2}

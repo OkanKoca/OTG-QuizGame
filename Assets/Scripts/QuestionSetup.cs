@@ -34,6 +34,8 @@ public class QuestionSetup : MonoBehaviour
     [SerializeField] private TextMeshProUGUI questionNumberText;
     private int questionNumber = 0;
     public int score;
+    private int highscore;
+    public TextMeshProUGUI highscoreText;
     [SerializeField] private TextMeshProUGUI finalScoreText;
     [SerializeField] private GameObject endGamePanel;
     [SerializeField] private GameObject mainGamePanel;
@@ -57,7 +59,15 @@ public class QuestionSetup : MonoBehaviour
         // Set all of the answer buttons text and correct answer values
         SetAnswerValues();
         
+        if (PlayerPrefs.HasKey("highscore"))
+        {
+            highscore = PlayerPrefs.GetInt("highscore");
+            Debug.Log("it has highscore");
+        }
+        else    
+            highscore = 0;
     }
+    
 
     private void GetQuestionAssets()
     {
@@ -69,6 +79,20 @@ public class QuestionSetup : MonoBehaviour
         correctAnswerNumber.text = "Doğru: " + correctAnswerCount.ToString();
         wrongAnswerNumber.text = "Yanlış: "+ wrongAnswerCount.ToString();
         isFinished();
+        highscoreText.text = "Rekor: "+ highscore.ToString();
+        if(questionNumber == 20)
+        {
+            Debug.Log("Highscore is saved.");
+            SaveHighScore();
+        }
+    }
+    public void SaveHighScore()
+    {
+        if (score > PlayerPrefs.GetInt("highscore"))
+        {
+            PlayerPrefs.SetInt("highscore", score);
+            Debug.Log("highscore is " + highscore.ToString());
+        }
     }
 
     private void SelectNewQuestion()
