@@ -85,7 +85,8 @@ public class AnswerButton : MonoBehaviour
             if(questionSetup.currentQuestion.category == "KOLAY" || questionSetup.currentQuestion.category == "ORTA" || questionSetup.currentQuestion.category == "ZOR") // yanlış sorularda 40 puan eksiliyor.
             {
                 Debug.Log("kolay");
-                questionSetup.score -= 40;
+                if(questionSetup.score >= 40 )
+                    questionSetup.score -= 40;
             }
             scoreText.text = questionSetup.score.ToString();
         }

@@ -11,8 +11,10 @@ public class QuestionSetup : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] public float remainingTime;
+    [SerializeField] public float remainingTimeDifficult;
     public GameObject timeBar;
     public int requestedTime;
+    public int difficultQuestionReqTime;
     [SerializeField]
     public List<QuestionData> questions;
     public QuestionData currentQuestion;
@@ -104,7 +106,9 @@ public class QuestionSetup : MonoBehaviour
         // Remove this questionm from the list so it will not be repeared (until the game is restarted)
         questions.RemoveAt(randomQuestionIndex);
         remainingTime = 30.2f;
+        remainingTimeDifficult = 45.2f;
         requestedTime = 29;
+        difficultQuestionReqTime = 44;
         questionNumber++;
         questionNumberText.text = questionNumber.ToString() + "/20";
         AnimateBar();
@@ -173,31 +177,70 @@ public class QuestionSetup : MonoBehaviour
 
     public void AnimateBar()
     {
-        LeanTween.cancel(timeBar);
-        timeBar.transform.localScale = new Vector3(1f, timeBar.transform.localScale.y, timeBar.transform.localScale.z);
-        LeanTween.scaleX(timeBar, 0, requestedTime); // x teki boyutunu requestedTime süresince küçültüyor.
-        // LeanTween.pause(timeBar);
+        if(currentQuestion.category == "ORTA" || currentQuestion.category == "KOLAY")
+        {
+            Debug.Log("kolay ya da orta timebar");
+            LeanTween.cancel(timeBar);
+            timeBar.transform.localScale = new Vector3(1f, timeBar.transform.localScale.y, timeBar.transform.localScale.z);
+            LeanTween.scaleX(timeBar, 0, requestedTime); // x teki boyutunu requestedTime süresince küçültüyor.
+            // LeanTween.pause(timeBar);
+        }
+        else if (currentQuestion.category == "ZOR")
+        {
+            Debug.Log("zor timebar");
+            LeanTween.cancel(timeBar);
+            timeBar.transform.localScale = new Vector3(1f, timeBar.transform.localScale.y, timeBar.transform.localScale.z);
+            LeanTween.scaleX(timeBar, 0, difficultQuestionReqTime); // x teki boyutunu requestedTime süresince küçültüyor.
+            // LeanTween.pause(timeBar);
+        }
+        
+        
     }
     public void StartCountdown() 
     {
-        if (remainingTime > 0f )
+        if(currentQuestion.category ==  "KOLAY" || currentQuestion.category == "ORTA")
         {
-            remainingTime -= Time.deltaTime; 
-                 
+            Debug.Log("kolay ya da orta time");
+            if (remainingTime > 0f )
+            {
+                remainingTime -= Time.deltaTime; 
+                    
+            }
+            else
+            {
+                remainingTime = 0f;
+                if(score >= 20)
+                    score -= 20;
+                Debug.Log("zaman tükkkkkk");
+                scoreText.text = score.ToString();
+                SelectNewQuestion();
+            }
+            int secondsRT = Mathf.FloorToInt(remainingTime % 60); // float olan remainingTime 60 ile mod alıp tavana yuvarlanıp seconds eşitleniyor.
+        
+            timerText.text = string.Format("{0:00}", secondsRT); // text olarak saniyeyi yazıyoruz.
         }
-        else
+        else if (currentQuestion.category == "ZOR")
         {
-            remainingTime = 0f;
-            score -= 20;
-            Debug.Log("zaman tükkkkkk");
-            scoreText.text = score.ToString();
-            SelectNewQuestion();
+            Debug.Log("zor time");
+            if (remainingTimeDifficult > 0f )
+            {
+                remainingTimeDifficult -= Time.deltaTime; 
+                    
+            }
+            else
+            {
+                remainingTimeDifficult = 0f;
+                if(score >= 20 )
+                    score -= 20;
+                Debug.Log("zaman tükkkkkk");
+                scoreText.text = score.ToString();
+                SelectNewQuestion();
+            }
+            int seconds = Mathf.FloorToInt(remainingTimeDifficult % 60); // float olan remainingTime 60 ile mod alıp tavana yuvarlanıp seconds eşitleniyor.
+        
+            timerText.text = string.Format("{0:00}", seconds); // text olarak saniyeyi yazıyoruz.
         }
-            
         
-        int seconds = Mathf.FloorToInt(remainingTime % 60); // float olan remainingTime 60 ile mod alıp tavana yuvarlanıp seconds eşitleniyor.
-        
-        timerText.text = string.Format("{0:00}", seconds); // text olarak saniyeyi yazıyoruz.
     }
     public void isFinished()
     {

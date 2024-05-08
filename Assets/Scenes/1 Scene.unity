@@ -1013,8 +1013,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 272929935}
   remainingTime: 30
+  remainingTimeDifficult: 45
   timeBar: {fileID: 1379498870}
   requestedTime: 30
+  difficultQuestionReqTime: 45
   questions: []
   currentQuestion: {fileID: 0}
   questionText: {fileID: 1690332398}
@@ -1465,7 +1467,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -75.261314, y: -15.052084, z: -56.445915, w: -105.12285}
+  m_margin: {x: -45.732628, y: -15.052084, z: -56.445915, w: -105.12285}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1660,7 +1662,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SKOR
+  m_text: '0
 
 '
   m_isRightToLeft: 0
@@ -1919,7 +1921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -118, y: -164}
+  m_AnchoredPosition: {x: -130, y: -164}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &506357104
@@ -2885,7 +2887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.4085369, g: 0.13461196, b: 0.5188679, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4566,7 +4568,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1735, y: 35}
+  m_SizeDelta: {x: 1740, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1379498872
 MonoBehaviour:
