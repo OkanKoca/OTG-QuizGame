@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
-  m_Name: SDG'ler (Surdurulebilir Kalkinma Hedefleri) ne zaman kabul edilmistir
+  m_Name: Cinsiyet esitligi kapsaminda kac farkli hedef mevcuttur
   m_EditorClassIdentifier: 
-  question: "SDG'ler (S\xFCrd\xFCr\xFClebilir Kalk\u0131nma Hedefleri) ne zaman kabul
-    edilmi\u015Ftir?"
+  question: "Cinsiyet e\u015Fitli\u011Fi kapsam\u0131nda ka\xE7 farkl\u0131 hedef
+    mevcuttur?"
   category: ORTA
   answers:
-  - 2015
-  - 1990
-  - 2000
-  - 2005
+  - 8
+  - 10
+  - 12
+  - 14

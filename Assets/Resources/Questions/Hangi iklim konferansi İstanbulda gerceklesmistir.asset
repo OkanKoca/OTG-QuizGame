@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
-  m_Name: "Hangi iklim konferansi \u0130stanbul'da gerceklesmistir"
+  m_Name: "Hangi iklim konferansi \u0130stanbulda gerceklesmistir"
   m_EditorClassIdentifier: 
   question: "Hangi iklim konferans\u0131 \u0130stanbul'da ger\xE7ekle\u015Fmi\u015Ftir?"
   category: ZOR

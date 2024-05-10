@@ -63,7 +63,7 @@ public class CVStoSO
 
             // Remove invalid characters from the name
             derivedName = derivedName.Replace("?", "").Replace("/", "").Replace(":", "").Replace("\"", "").Replace("ş", "s").Replace("ğ", "g") // soruda olan türkçe karakterler vs değiştiriliyor.
-            .Replace("ü", "u").Replace("ö", "o").Replace("ç", "c").Replace("ı", "i").Replace("I", "i").Replace(",", "").Replace("\n", " ").Replace(".", " ");
+            .Replace("ü", "u").Replace("ö", "o").Replace("ç", "c").Replace("ı", "i").Replace("I", "i").Replace(",", "").Replace("\n", " ").Replace(".", " ").Replace("'", "");
             // Assign the derived name to the ScriptableObject
             questionData.name = derivedName; // yeni soru ismi değiştrilmiş şekilde oluyor(scriptable object isimlendirmek için yani sorunun orijinali değişmiyor.)
             Debug.Log($"Creating ScriptableObject with name: {questionData.name}");
@@ -71,6 +71,7 @@ public class CVStoSO
             
             // Save this in the questionsPathfolder to load them later by script
             AssetDatabase.CreateAsset(questionData, $"{questionsPath}/{questionData.name}.asset");
+            Debug.Log($"{questionData.name} Scriptable object is created");
         }
 
         AssetDatabase.SaveAssets();
