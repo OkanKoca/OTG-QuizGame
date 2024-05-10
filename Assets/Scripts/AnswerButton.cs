@@ -32,7 +32,6 @@ public class AnswerButton : MonoBehaviour
         if (isCorrect)
         {
             cb.pressedColor = correctColor;
-            Debug.Log("button color" );
         }
         else
         {
@@ -87,6 +86,8 @@ public class AnswerButton : MonoBehaviour
                 Debug.Log("kolay");
                 if(questionSetup.score >= 40 )
                     questionSetup.score -= 40;
+                else
+                    questionSetup.score = 0;
             }
             scoreText.text = questionSetup.score.ToString();
         }

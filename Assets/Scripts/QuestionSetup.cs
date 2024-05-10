@@ -34,14 +34,16 @@ public class QuestionSetup : MonoBehaviour
     public TextMeshProUGUI wrongAnswerNumber;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI questionNumberText;
-    private int questionNumber = 0;
+    public int questionNumber = 0;
     public int score;
-    private int highscore;
-    public TextMeshProUGUI highscoreText;
+    // private int highscore;
+    // public TextMeshProUGUI highscoreText;
     [SerializeField] private TextMeshProUGUI finalScoreText;
     [SerializeField] private GameObject endGamePanel;
     [SerializeField] private GameObject mainGamePanel;
     QuizPauseController quizPause;
+    private int highscore;
+    public TextMeshProUGUI highscoreText;
 
     private void Awake()
     {
@@ -61,13 +63,14 @@ public class QuestionSetup : MonoBehaviour
         // Set all of the answer buttons text and correct answer values
         SetAnswerValues();
         
-        if (PlayerPrefs.HasKey("highscore"))
-        {
-            highscore = PlayerPrefs.GetInt("highscore");
-            Debug.Log("it has highscore");
-        }
-        else    
-            highscore = 0;
+        // if (PlayerPrefs.HasKey("highscore"))
+        // {
+        //     highscore = PlayerPrefs.GetInt("highscore");
+        //     Debug.Log("it has highscore");
+        // }
+        // else    
+        //     highscore = 0;
+        LoadHighScore();
     }
     
 
@@ -81,12 +84,34 @@ public class QuestionSetup : MonoBehaviour
         correctAnswerNumber.text = "Doğru: " + correctAnswerCount.ToString();
         wrongAnswerNumber.text = "Yanlış: "+ wrongAnswerCount.ToString();
         isFinished();
-        highscoreText.text = "Rekor: "+ highscore.ToString();
+        // highscoreText.text = "REKOR: "+ highscore.ToString();
+        // if(questionNumber == 20)
+        // {
+        //     Debug.Log("Highscore is saved.");
+        //     SaveHighScore();
+        // }
+        highscoreText.text = "REKOR: "+ highscore.ToString();
         if(questionNumber == 20)
         {
             Debug.Log("Highscore is saved.");
             SaveHighScore();
         }
+    }
+    public void LoadHighScore()
+    {
+        if (PlayerPrefs.HasKey("highscore"))
+        {
+            highscore = PlayerPrefs.GetInt("highscore");
+            Debug.Log("it has highscore");
+        }
+        else    
+            highscore = 0;
+    }
+    public void ResetHighScore()
+    {
+        PlayerPrefs.DeleteKey("highscore");
+        PlayerPrefs.Save();
+        highscore = 0;
     }
     public void SaveHighScore()
     {
@@ -96,6 +121,20 @@ public class QuestionSetup : MonoBehaviour
             Debug.Log("highscore is " + highscore.ToString());
         }
     }
+    // public void SaveHighScore()
+    // {
+    //     if (score > PlayerPrefs.GetInt("highscore"))
+    //     {
+    //         PlayerPrefs.SetInt("highscore", score);
+    //         Debug.Log("highscore is " + highscore.ToString());
+    //     }
+    // }
+    // public void ResetHighScore()
+    // {
+    //     PlayerPrefs.DeleteKey("highscore");
+    //     PlayerPrefs.Save();
+    //     highscore = 0;
+    // }
 
     private void SelectNewQuestion()
     {
@@ -179,7 +218,7 @@ public class QuestionSetup : MonoBehaviour
     {
         if(currentQuestion.category == "ORTA" || currentQuestion.category == "KOLAY")
         {
-            Debug.Log("kolay ya da orta timebar");
+            // Debug.Log("kolay ya da orta timebar");
             LeanTween.cancel(timeBar);
             timeBar.transform.localScale = new Vector3(1f, timeBar.transform.localScale.y, timeBar.transform.localScale.z);
             LeanTween.scaleX(timeBar, 0, requestedTime); // x teki boyutunu requestedTime süresince küçültüyor.
@@ -187,7 +226,7 @@ public class QuestionSetup : MonoBehaviour
         }
         else if (currentQuestion.category == "ZOR")
         {
-            Debug.Log("zor timebar");
+            // Debug.Log("zor timebar");
             LeanTween.cancel(timeBar);
             timeBar.transform.localScale = new Vector3(1f, timeBar.transform.localScale.y, timeBar.transform.localScale.z);
             LeanTween.scaleX(timeBar, 0, difficultQuestionReqTime); // x teki boyutunu requestedTime süresince küçültüyor.
@@ -200,7 +239,7 @@ public class QuestionSetup : MonoBehaviour
     {
         if(currentQuestion.category ==  "KOLAY" || currentQuestion.category == "ORTA")
         {
-            Debug.Log("kolay ya da orta time");
+            // Debug.Log("kolay ya da orta time");
             if (remainingTime > 0f )
             {
                 remainingTime -= Time.deltaTime; 
@@ -211,6 +250,8 @@ public class QuestionSetup : MonoBehaviour
                 remainingTime = 0f;
                 if(score >= 20)
                     score -= 20;
+                else
+                    score = 0;
                 Debug.Log("zaman tükkkkkk");
                 scoreText.text = score.ToString();
                 SelectNewQuestion();
@@ -221,7 +262,7 @@ public class QuestionSetup : MonoBehaviour
         }
         else if (currentQuestion.category == "ZOR")
         {
-            Debug.Log("zor time");
+            // Debug.Log("zor time");
             if (remainingTimeDifficult > 0f )
             {
                 remainingTimeDifficult -= Time.deltaTime; 
@@ -232,6 +273,8 @@ public class QuestionSetup : MonoBehaviour
                 remainingTimeDifficult = 0f;
                 if(score >= 20 )
                     score -= 20;
+                else
+                    score = 0;
                 Debug.Log("zaman tükkkkkk");
                 scoreText.text = score.ToString();
                 SelectNewQuestion();
