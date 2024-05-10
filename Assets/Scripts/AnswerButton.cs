@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine.UI;
 using JetBrains.Annotations;
 
@@ -22,6 +21,9 @@ public class AnswerButton : MonoBehaviour
     public Color wrongColor = Color.red;
 
     private ColorBlock cb;
+
+    public AudioSource correctSound;
+    public AudioSource wrongSound;
 
     private void Start()
     {
@@ -72,6 +74,7 @@ public class AnswerButton : MonoBehaviour
                 questionSetup.score += 100;
             }
             scoreText.text = questionSetup.score.ToString();
+            correctSound.Play();
 
         }
         else
@@ -90,6 +93,7 @@ public class AnswerButton : MonoBehaviour
                     questionSetup.score = 0;
             }
             scoreText.text = questionSetup.score.ToString();
+            wrongSound.Play();
         }
 
         // Get the next question if there are more in the list
