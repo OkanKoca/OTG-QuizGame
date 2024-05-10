@@ -63,13 +63,6 @@ public class QuestionSetup : MonoBehaviour
         // Set all of the answer buttons text and correct answer values
         SetAnswerValues();
         
-        // if (PlayerPrefs.HasKey("highscore"))
-        // {
-        //     highscore = PlayerPrefs.GetInt("highscore");
-        //     Debug.Log("it has highscore");
-        // }
-        // else    
-        //     highscore = 0;
         LoadHighScore();
     }
     
@@ -84,14 +77,8 @@ public class QuestionSetup : MonoBehaviour
         correctAnswerNumber.text = "Doğru: " + correctAnswerCount.ToString();
         wrongAnswerNumber.text = "Yanlış: "+ wrongAnswerCount.ToString();
         isFinished();
-        // highscoreText.text = "REKOR: "+ highscore.ToString();
-        // if(questionNumber == 20)
-        // {
-        //     Debug.Log("Highscore is saved.");
-        //     SaveHighScore();
-        // }
         highscoreText.text = "REKOR: "+ highscore.ToString();
-        if(questionNumber == 20)
+        if(questionNumber == 21)
         {
             Debug.Log("Highscore is saved.");
             SaveHighScore();
@@ -121,20 +108,6 @@ public class QuestionSetup : MonoBehaviour
             Debug.Log("highscore is " + highscore.ToString());
         }
     }
-    // public void SaveHighScore()
-    // {
-    //     if (score > PlayerPrefs.GetInt("highscore"))
-    //     {
-    //         PlayerPrefs.SetInt("highscore", score);
-    //         Debug.Log("highscore is " + highscore.ToString());
-    //     }
-    // }
-    // public void ResetHighScore()
-    // {
-    //     PlayerPrefs.DeleteKey("highscore");
-    //     PlayerPrefs.Save();
-    //     highscore = 0;
-    // }
 
     private void SelectNewQuestion()
     {
