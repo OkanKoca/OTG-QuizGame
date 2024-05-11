@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
+  m_Name: Surdurulebilir bir yasam tarzini tesvik etmek icin en etkili yontem asagidakilerden
+    hangisidir
+  m_EditorClassIdentifier: 
+  question: "S\xFCrd\xFCr\xFClebilir bir ya\u015Fam tarz\u0131n\u0131 te\u015Fvik
+    etmek i\xE7in en etkili y\xF6ntem a\u015Fa\u011F\u0131dakilerden hangisidir?"
+  category: KOLAY
+  answers:
+  - "Gerid\xF6n\xFC\u015F\xFCm ve geri kazan\u0131m\u0131 te\u015Fvik etmek"
+  - " H\u0131zl\u0131 t\xFCketim al\u0131\u015Fkanl\u0131klar\u0131n\u0131 te\u015Fvik
+    etmek"
+  - "Tek kullan\u0131ml\u0131k plastik \xFCr\xFCnlerin kullan\u0131m\u0131n\u0131
+    art\u0131rmak"
+  - "At\u0131k \xFCretimini art\u0131rmak"

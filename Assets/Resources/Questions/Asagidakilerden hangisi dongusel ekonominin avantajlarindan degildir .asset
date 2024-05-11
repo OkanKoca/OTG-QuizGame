@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
+  m_Name: 'Asagidakilerden hangisi dongusel ekonominin avantajlarindan degildir '
+  m_EditorClassIdentifier: 
+  question: "A\u015Fa\u011F\u0131dakilerden hangisi d\xF6ng\xFCsel ekonominin avantajlar\u0131ndan
+    de\u011Fildir? "
+  category: ORTA
+  answers:
+  - "Hammadde fiyat dalgalanmalar\u0131n\u0131 artt\u0131rma"
+  - "Yeni i\u015F f\u0131rsatlar\u0131 ve istihdam\u0131 artt\u0131rma"
+  - "Daha az kaynak kullan\u0131m\u0131"
+  - Maaliyetleri Azaltma

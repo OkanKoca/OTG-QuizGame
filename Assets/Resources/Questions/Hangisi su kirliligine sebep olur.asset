@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
+  m_Name: Hangisi su kirliligine sebep olur
+  m_EditorClassIdentifier: 
+  question: "Hangisi su kirlili\u011Fine sebep olur?"
+  category: KOLAY
+  answers:
+  - "At\u0131ksular\u0131n ar\u0131t\u0131lmadan su kaynaklar\u0131na de\u015Farj
+    edilmesi"
+  - "Ya\u011Fmur sular\u0131n\u0131n toplanmas\u0131"
+  - Su tasarrufu
+  - "Do\u011Fal kaynaklar\u0131n s\xFCrd\xFCr\xFClebilir kullan\u0131m\u0131"

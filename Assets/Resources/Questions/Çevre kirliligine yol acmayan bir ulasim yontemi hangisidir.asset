@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
+  m_Name: "\xC7evre kirliligine yol acmayan bir ulasim yontemi hangisidir"
+  m_EditorClassIdentifier: 
+  question: "\xC7evre kirlili\u011Fine yol a\xE7mayan bir ula\u015F\u0131m y\xF6ntemi
+    hangisidir?"
+  category: KOLAY
+  answers:
+  - Bisiklet
+  - "Otomobil kullan\u0131m\u0131"
+  - "Deniz ta\u015F\u0131mac\u0131l\u0131\u011F\u0131"
+  - Tren

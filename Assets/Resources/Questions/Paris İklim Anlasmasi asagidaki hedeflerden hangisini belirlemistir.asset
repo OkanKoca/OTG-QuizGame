@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
+  m_Name: "Paris \u0130klim Anlasmasi asagidaki hedeflerden hangisini belirlemistir"
+  m_EditorClassIdentifier: 
+  question: "Paris \u0130klim Anla\u015Fmas\u0131, a\u015Fa\u011F\u0131daki hedeflerden
+    hangisini belirlemi\u015Ftir?"
+  category: ZOR
+  answers:
+  - "Sera gaz\u0131 emisyonlar\u0131n\u0131 net s\u0131f\u0131ra indirme"
+  - "K\xFCresel \u0131s\u0131nmay\u0131 1 derecenin alt\u0131nda tutma"
+  - "Orman alanlar\u0131n\u0131 iki kat\u0131na \xE7\u0131karma"
+  - "Enerji verimlili\u011Fini %10 art\u0131rma"

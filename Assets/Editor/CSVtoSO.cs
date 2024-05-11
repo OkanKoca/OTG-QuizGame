@@ -10,15 +10,17 @@ using System.IO;
 
 public class CVStoSO
 {
-    private static string questionsCSVPath = "/Editor/CSVs/Questions.csv";
+    private static string questionsCSVPath = "/Editor/CSVs/RealQuestions.csv";
     private static string questionsPath = "Assets/Resources/Questions/";
     private static int numberOfAnswers = 4;
-
+    
     [MenuItem("Utilities/Generate Questions")]
+    
     public static void GeneratePhrases()
     {
 
         string[] allLines = File.ReadAllLines(Application.dataPath + questionsCSVPath);
+        // Debug.Log(allLines[allLines.Length-1]); // csv sonuna kadar okunuyor eğer logda soru çıkıyorsa
 
         foreach (string s in allLines)
         {
@@ -48,15 +50,25 @@ public class CVStoSO
 
             // CREATE THE FILE NAME
             // Remove the "?", file name cannot have that character
-            if (questionData.question.Contains("?"))
-            {
-                // Questions will be named the same as the question text in this example
-                questionData.name = questionData.question.Remove(questionData.question.IndexOf("?"));
-            }
-            else // Does not contain an invalid character, no changes required
-            {
-                questionData.name = questionData.question;
-            }
+            // if (questionData.question.Contains("?") )
+            // {
+            //     // Questions will be named the same as the question text in this example
+            //     questionData.name = questionData.question.Remove(questionData.question.IndexOf("?"));
+            // }
+            // else // Does not contain an invalid character, no changes required
+            // {
+            //     questionData.name = questionData.question;
+            // }
+            string derivedName = questionData.question; // soruyu başka bir değişkene atıyoruz.
+
+            // Remove invalid characters from the name
+            derivedName = derivedName.Replace("?", "").Replace("/", "").Replace(":", "").Replace("\"", "").Replace("ş", "s").Replace("ğ", "g") // soruda olan türkçe karakterler vs değiştiriliyor.
+            .Replace("ü", "u").Replace("ö", "o").Replace("ç", "c").Replace("ı", "i").Replace("I", "i").Replace(",", "").Replace("\n", " ").Replace(".", " ");
+            // Assign the derived name to the ScriptableObject
+            questionData.name = derivedName; // yeni soru ismi değiştrilmiş şekilde oluyor(scriptable object isimlendirmek için yani sorunun orijinali değişmiyor.)
+            Debug.Log($"Creating ScriptableObject with name: {questionData.name}");
+
+            
             // Save this in the questionsPathfolder to load them later by script
             AssetDatabase.CreateAsset(questionData, $"{questionsPath}/{questionData.name}.asset");
         }
@@ -65,4 +77,6 @@ public class CVStoSO
 
         Debug.Log($"Generated Questions");
     }
+
+    
 }
