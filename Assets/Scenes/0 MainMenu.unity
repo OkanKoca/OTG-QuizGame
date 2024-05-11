@@ -2009,7 +2009,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879273440}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2018,7 +2018,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -95, y: 768}
+  m_AnchoredPosition: {x: -95, y: 444.00003}
   m_SizeDelta: {x: 0, y: 230.0742}
   m_Pivot: {x: 0.49999997, y: 0.5}
 --- !u!114 &879273442
@@ -2041,7 +2041,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Oyuncu oyna butonuna bast\u0131\u011F\u0131nda oyun ba\u015Flar . Herhangi
+  m_text: "Oyuncu oyna butonuna bast\u0131\u011F\u0131nda oyun ba\u015Flar. Herhangi
     bir toplam s\xFCre s\u0131n\u0131rlamas\u0131 yoktur . Her bir sorunun kendi
     zorlu\u011Funa g\xF6e s\xFCre s\u0131n\u0131r\u0131 vard\u0131r . Kolay ve orta
     sorular 30 saniye , zor sorular 45 saniye s\xFCrmektedir . Kolay sorular 50 ,
@@ -2073,15 +2073,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 16
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2109,7 +2109,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 238.8291, y: 0, z: 0, w: 0}
+  m_margin: {x: 331.97693, y: 0, z: 119.76172, w: -723.005}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4221,7 +4221,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 965f86a923057b249aa6755a04a74772, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

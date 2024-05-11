@@ -3351,9 +3351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0699c5a8774f3504ea64b72bfd2dd9c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passText: {fileID: 359572748}
-  fiftyText: {fileID: 1126074692}
-  doubleAnsText: {fileID: 1821003757}
+  passText: {fileID: 1469460268}
+  fiftyText: {fileID: 1574467503}
+  doubleAnsText: {fileID: 1943502876}
   isClickedDouble: 0
   isClickedFifty: 0
   Buttons:
@@ -3444,7 +3444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4085369, g: 0.13461196, b: 0.5188679, a: 1}
+  m_Color: {r: 0.2537507, g: 0.08624065, b: 0.3207547, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6721,7 +6721,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 18.844055, y: 7.30365, z: -0.7958374, w: 6.572357}
+  m_margin: {x: 80.94275, y: 47.22467, z: 74.60986, w: 55.363617}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7030,7 +7030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1796956876
 RectTransform:
   m_ObjectHideFlags: 0
