@@ -40,8 +40,8 @@ public class QuestionSetup : MonoBehaviour
     [SerializeField] private GameObject endGamePanel;
     [SerializeField] private GameObject mainGamePanel;
     QuizPauseController quizPause;
-    private int highscore;
-    public TextMeshProUGUI highscoreText;
+    // private int highscore;
+    // public TextMeshProUGUI highscoreText;
 
     private JokerScripts jokerScripts;
     private void Awake()
