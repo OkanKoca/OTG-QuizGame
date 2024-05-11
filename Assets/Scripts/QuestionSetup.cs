@@ -1,6 +1,4 @@
 // This script controls choosing, presenting and randomizing questions & answers
-
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -27,17 +25,17 @@ public class QuestionSetup : MonoBehaviour
     private AnswerButton[] answerButtons;
 
     [SerializeField]
-    private int correctAnswerChoice;
+    public int correctAnswerChoice;
     public int correctAnswerCount = 0;
     public int wrongAnswerCount = 0;
     public TextMeshProUGUI correctAnswerNumber;
     public TextMeshProUGUI wrongAnswerNumber;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI questionNumberText;
-    public int questionNumber = 0;
+    private int questionNumber = 0;
     public int score;
-    // private int highscore;
-    // public TextMeshProUGUI highscoreText;
+    private int highscore;
+    public TextMeshProUGUI highscoreText;
     [SerializeField] private TextMeshProUGUI finalScoreText;
     [SerializeField] private GameObject endGamePanel;
     [SerializeField] private GameObject mainGamePanel;
@@ -45,6 +43,7 @@ public class QuestionSetup : MonoBehaviour
     private int highscore;
     public TextMeshProUGUI highscoreText;
 
+    private JokerScripts jokerScripts;
     private void Awake()
     {
         // Get all the questions ready
@@ -56,7 +55,8 @@ public class QuestionSetup : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        //Get a new question
+        jokerScripts = GameObject.FindWithTag("JokerManager").GetComponent<JokerScripts>();
+            //Get a new question
         SelectNewQuestion();
         // Set all text and values on screen
         SetQuestionValues();
@@ -67,6 +67,13 @@ public class QuestionSetup : MonoBehaviour
     }
     
 
+        // if (PlayerPrefs.HasKey("highscore"))
+        // {
+        //     highscore = PlayerPrefs.GetInt("highscore");
+        // }
+        // else
+        //     highscore = 0;
+    
     private void GetQuestionAssets()
     {
         // Get all of the questions from the questions folder
@@ -100,6 +107,18 @@ public class QuestionSetup : MonoBehaviour
         PlayerPrefs.Save();
         highscore = 0;
     }
+    private void FixedUpdate()
+    {
+        StartCountdown();
+        correctAnswerNumber.text = "Doğru: " + correctAnswerCount.ToString();
+        wrongAnswerNumber.text = "Yanlış: " + wrongAnswerCount.ToString();
+        isFinished();
+        highscoreText.text = "Rekor: " + highscore.ToString();
+        if (questionNumber == 20)
+        {
+            SaveHighScore();
+        }
+    }
     public void SaveHighScore()
     {
         if (score > PlayerPrefs.GetInt("highscore"))
@@ -109,7 +128,7 @@ public class QuestionSetup : MonoBehaviour
         }
     }
 
-    private void SelectNewQuestion()
+    public void SelectNewQuestion()
     {
         // Get a random value for which question to choose
         int randomQuestionIndex = Random.Range(0, questions.Count);
@@ -141,50 +160,118 @@ public class QuestionSetup : MonoBehaviour
     {
         // Randomize the answer button order
         List<string> answers = RandomizeAnswers(new List<string>(currentQuestion.answers));
-
         // Set up the answer buttons
         for (int i = 0; i < answerButtons.Length; i++)
         {
+            jokerScripts.Buttons[i].SetActive(true);
             // Create a temporary boolean to pass to the buttons
             bool isCorrect = false;
-
             // If it is the correct answer, set the bool to true
-            if(i == correctAnswerChoice)
+            if (i == correctAnswerChoice)
             {
                 isCorrect = true;
             }
-
             answerButtons[i].SetIsCorrect(isCorrect);
             answerButtons[i].SetAnswerText(answers[i]);
         }
     }
-
     private List<string> RandomizeAnswers(List<string> originalList)
     {
         bool correctAnswerChosen = false;
 
-        List<string>  newList = new List<string>();
+        List<string> newList = new List<string>();
 
-        for(int i = 0; i < answerButtons.Length; i++)
+        for (int i = 0; i < answerButtons.Length; i++)
         {
             // Get a random number of the remaining choices
             int random = Random.Range(0, originalList.Count);
 
             // If the random number is 0, this is the correct answer, MAKE SURE THIS IS ONLY USED ONCE
-            if(random == 0 && !correctAnswerChosen)
+            if (random == 0 && !correctAnswerChosen)
             {
                 correctAnswerChoice = i;
                 correctAnswerChosen = true;
             }
-
             // Add this to the new list
             newList.Add(originalList[random]);
             //Remove this choice from the original list (it has been used)
-            originalList.RemoveAt(random);  
+            originalList.RemoveAt(random);
+        }
+        return newList;
+    }
+
+    public void AnimateBar()
+    {
+        if (currentQuestion.category == "ORTA" || currentQuestion.category == "KOLAY")
+        {
+            //Debug.Log("kolay ya da orta timebar");
+            LeanTween.cancel(timeBar);
+            timeBar.transform.localScale = new Vector3(1f, timeBar.transform.localScale.y, timeBar.transform.localScale.z);
+            LeanTween.scaleX(timeBar, 0, requestedTime); // x teki boyutunu requestedTime süresince küçültüyor.
+            // LeanTween.pause(timeBar);
+        }
+        else if (currentQuestion.category == "ZOR")
+        {
+            LeanTween.cancel(timeBar);
+            timeBar.transform.localScale = new Vector3(1f, timeBar.transform.localScale.y, timeBar.transform.localScale.z);
+            LeanTween.scaleX(timeBar, 0, difficultQuestionReqTime); // x teki boyutunu requestedTime süresince küçültüyor.
         }
 
 
-        return newList;
+    }
+    public void StartCountdown()
+    {
+        if (currentQuestion.category == "KOLAY" || currentQuestion.category == "ORTA")
+        {
+            if (remainingTime > 0f)
+            {
+                remainingTime -= Time.deltaTime;
+
+            }
+            else
+            {
+                remainingTime = 0f;
+                if (score >= 20)
+                    score -= 20;
+                scoreText.text = score.ToString();
+                SelectNewQuestion();
+            }
+            int secondsRT = Mathf.FloorToInt(remainingTime % 60); // float olan remainingTime 60 ile mod alıp tavana yuvarlanıp seconds eşitleniyor.
+
+            timerText.text = string.Format("{0:00}", secondsRT); // text olarak saniyeyi yazıyoruz.
+        }
+        else if (currentQuestion.category == "ZOR")
+        {
+            if (remainingTimeDifficult > 0f)
+            {
+                remainingTimeDifficult -= Time.deltaTime;
+
+            }
+            else
+            {
+                remainingTimeDifficult = 0f;
+                if (score >= 20)
+                    score -= 20;
+                scoreText.text = score.ToString();
+                SelectNewQuestion();
+            }
+            int seconds = Mathf.FloorToInt(remainingTimeDifficult % 60); // float olan remainingTime 60 ile mod alıp tavana yuvarlanıp seconds eşitleniyor.
+
+            timerText.text = string.Format("{0:00}", seconds); // text olarak saniyeyi yazıyoruz.
+        }
+    }
+    public void isFinished()
+    {
+
+        if (questionNumber == 21)
+        {
+            questionNumberText.text = "20/20";
+            finalScoreText.text = "Toplam Skor: " + score;
+            endGamePanel.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+            Time.timeScale = 1;
     }
 
     public void AnimateBar()

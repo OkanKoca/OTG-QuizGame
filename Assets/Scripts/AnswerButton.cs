@@ -7,7 +7,7 @@ using TMPro;
 using UnityEngine.UI;
 using JetBrains.Annotations;
 
-public class AnswerButton : MonoBehaviour
+public class AnswerButton : MonoBehaviour 
 {
     private bool isCorrect;
     [SerializeField] private TextMeshProUGUI answerText;
@@ -22,9 +22,12 @@ public class AnswerButton : MonoBehaviour
 
     private ColorBlock cb;
 
+    private JokerScripts jokerScripts;
     private void Start()
     {
         cb = button.colors;
+        jokerScripts =GameObject.FindWithTag("JokerManager").GetComponent<JokerScripts>();
+        jokerScripts.isClickedDouble = false;
     }
     private void Update()
     {
@@ -53,49 +56,50 @@ public class AnswerButton : MonoBehaviour
         if(isCorrect)
         {
             cb.pressedColor = correctColor;
-            Debug.Log("CORRECT ANSWER");
+            //Debug.Log("CORRECT ANSWER");
             questionSetup.correctAnswerCount += 1;
             if(questionSetup.currentQuestion.category == "KOLAY") // kolay soru +50 puan
             {
-                Debug.Log("kolay");
+                //Debug.Log("kolay");
                 questionSetup.score += 50;
             }
             else if (questionSetup.currentQuestion.category == "ORTA") // orta soru +75 puan
             {
-                Debug.Log("orta");
+                //Debug.Log("orta");
                 questionSetup.score += 75;
             }
             else if(questionSetup.currentQuestion.category == "ZOR") // zor soru +100 puan
             {
-                Debug.Log("zor");
+                //Debug.Log("zor");
                 questionSetup.score += 100;
             }
             scoreText.text = questionSetup.score.ToString();
-
+            jokerScripts.isClickedDouble = false;
         }
         else
         {
-            cb = button.colors;
-            cb.normalColor = startColor;
-            cb.pressedColor = wrongColor;
-            Debug.Log("WRONG ANSWER");
-            questionSetup.wrongAnswerCount += 1;
-            if(questionSetup.currentQuestion.category == "KOLAY" || questionSetup.currentQuestion.category == "ORTA" || questionSetup.currentQuestion.category == "ZOR") // yanlış sorularda 40 puan eksiliyor.
+            if(!jokerScripts.isClickedDouble)
             {
-                Debug.Log("kolay");
-                if(questionSetup.score >= 40 )
-                    questionSetup.score -= 40;
-                else
-                    questionSetup.score = 0;
+                cb = button.colors;
+                cb.normalColor = startColor;
+                cb.pressedColor = wrongColor;
+                //Debug.Log("WRONG ANSWER");
+                questionSetup.wrongAnswerCount += 1;
+                if (questionSetup.currentQuestion.category == "KOLAY" || questionSetup.currentQuestion.category == "ORTA" || questionSetup.currentQuestion.category == "ZOR") // yanlış sorularda 40 puan eksiliyor.
+                {
+                    //Debug.Log("kolay");
+                    if (questionSetup.score >= 40)
+                        questionSetup.score -= 40;
+                }
+                scoreText.text = questionSetup.score.ToString();
             }
-            scoreText.text = questionSetup.score.ToString();
         }
-
         // Get the next question if there are more in the list
-        if (questionSetup.questions.Count > 0)
+        if (questionSetup.questions.Count > 0 &&!jokerScripts.isClickedDouble)
         {
             // Generate a new question
             questionSetup.Start();
         }
+        jokerScripts.isClickedDouble = false;
     }
 }
