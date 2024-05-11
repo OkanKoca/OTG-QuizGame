@@ -23,6 +23,9 @@ public class AnswerButton : MonoBehaviour
     private ColorBlock cb;
 
     private JokerScripts jokerScripts;
+    public AudioSource correctSound;
+    public AudioSource wrongSound;
+
     private void Start()
     {
         cb = button.colors;
@@ -75,6 +78,8 @@ public class AnswerButton : MonoBehaviour
             }
             scoreText.text = questionSetup.score.ToString();
             jokerScripts.isClickedDouble = false;
+            correctSound.Play();
+
         }
         else
         {
@@ -93,6 +98,8 @@ public class AnswerButton : MonoBehaviour
                 }
                 scoreText.text = questionSetup.score.ToString();
             }
+            scoreText.text = questionSetup.score.ToString();
+            wrongSound.Play();
         }
         // Get the next question if there are more in the list
         if (questionSetup.questions.Count > 0 &&!jokerScripts.isClickedDouble)
