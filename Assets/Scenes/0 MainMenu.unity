@@ -677,10 +677,10 @@ MonoBehaviour:
   questionNumberText: {fileID: 0}
   questionNumber: 0
   score: 0
+  highscoreText: {fileID: 1942443860}
   finalScoreText: {fileID: 0}
   endGamePanel: {fileID: 0}
   mainGamePanel: {fileID: 0}
-  highscoreText: {fileID: 1942443860}
 --- !u!4 &164248796
 Transform:
   m_ObjectHideFlags: 0

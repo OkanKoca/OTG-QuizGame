@@ -79,18 +79,18 @@ public class QuestionSetup : MonoBehaviour
         // Get all of the questions from the questions folder
         questions = new List<QuestionData>(Resources.LoadAll<QuestionData>("Questions"));
     }
-    private void Update() {
-        StartCountdown();
-        correctAnswerNumber.text = "Doğru: " + correctAnswerCount.ToString();
-        wrongAnswerNumber.text = "Yanlış: "+ wrongAnswerCount.ToString();
-        isFinished();
-        highscoreText.text = "REKOR: "+ highscore.ToString();
-        if(questionNumber == 21)
-        {
-            Debug.Log("Highscore is saved.");
-            SaveHighScore();
-        }
-    }
+    // private void Update() {
+    //     StartCountdown();
+    //     correctAnswerNumber.text = "Doğru: " + correctAnswerCount.ToString();
+    //     wrongAnswerNumber.text = "Yanlış: "+ wrongAnswerCount.ToString();
+    //     isFinished();
+    //     highscoreText.text = "REKOR: "+ highscore.ToString();
+    //     if(questionNumber == 21)
+    //     {
+    //         Debug.Log("Highscore is saved.");
+    //         SaveHighScore();
+    //     }
+    // }
     public void LoadHighScore()
     {
         if (PlayerPrefs.HasKey("highscore"))
@@ -113,8 +113,8 @@ public class QuestionSetup : MonoBehaviour
         correctAnswerNumber.text = "Doğru: " + correctAnswerCount.ToString();
         wrongAnswerNumber.text = "Yanlış: " + wrongAnswerCount.ToString();
         isFinished();
-        highscoreText.text = "Rekor: " + highscore.ToString();
-        if (questionNumber == 20)
+        highscoreText.text = "REKOR: " + highscore.ToString();
+        if (questionNumber == 21)
         {
             SaveHighScore();
         }
