@@ -32,7 +32,7 @@ public class QuestionSetup : MonoBehaviour
     public TextMeshProUGUI wrongAnswerNumber;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI questionNumberText;
-    private int questionNumber = 0;
+    public int questionNumber = 0;
     public int score;
     private int highscore;
     public TextMeshProUGUI highscoreText;
@@ -274,88 +274,88 @@ public class QuestionSetup : MonoBehaviour
             Time.timeScale = 1;
     }
 
-    public void AnimateBar()
-    {
-        if(currentQuestion.category == "ORTA" || currentQuestion.category == "KOLAY")
-        {
-            // Debug.Log("kolay ya da orta timebar");
-            LeanTween.cancel(timeBar);
-            timeBar.transform.localScale = new Vector3(1f, timeBar.transform.localScale.y, timeBar.transform.localScale.z);
-            LeanTween.scaleX(timeBar, 0, requestedTime); // x teki boyutunu requestedTime süresince küçültüyor.
-            // LeanTween.pause(timeBar);
-        }
-        else if (currentQuestion.category == "ZOR")
-        {
-            // Debug.Log("zor timebar");
-            LeanTween.cancel(timeBar);
-            timeBar.transform.localScale = new Vector3(1f, timeBar.transform.localScale.y, timeBar.transform.localScale.z);
-            LeanTween.scaleX(timeBar, 0, difficultQuestionReqTime); // x teki boyutunu requestedTime süresince küçültüyor.
-            // LeanTween.pause(timeBar);
-        }
+    // public void AnimateBar()
+    // {
+    //     if(currentQuestion.category == "ORTA" || currentQuestion.category == "KOLAY")
+    //     {
+    //         // Debug.Log("kolay ya da orta timebar");
+    //         LeanTween.cancel(timeBar);
+    //         timeBar.transform.localScale = new Vector3(1f, timeBar.transform.localScale.y, timeBar.transform.localScale.z);
+    //         LeanTween.scaleX(timeBar, 0, requestedTime); // x teki boyutunu requestedTime süresince küçültüyor.
+    //         // LeanTween.pause(timeBar);
+    //     }
+    //     else if (currentQuestion.category == "ZOR")
+    //     {
+    //         // Debug.Log("zor timebar");
+    //         LeanTween.cancel(timeBar);
+    //         timeBar.transform.localScale = new Vector3(1f, timeBar.transform.localScale.y, timeBar.transform.localScale.z);
+    //         LeanTween.scaleX(timeBar, 0, difficultQuestionReqTime); // x teki boyutunu requestedTime süresince küçültüyor.
+    //         // LeanTween.pause(timeBar);
+    //     }
         
         
-    }
-    public void StartCountdown() 
-    {
-        if(currentQuestion.category ==  "KOLAY" || currentQuestion.category == "ORTA")
-        {
-            // Debug.Log("kolay ya da orta time");
-            if (remainingTime > 0f )
-            {
-                remainingTime -= Time.deltaTime; 
+    // }
+    // public void StartCountdown() 
+    // {
+    //     if(currentQuestion.category ==  "KOLAY" || currentQuestion.category == "ORTA")
+    //     {
+    //         // Debug.Log("kolay ya da orta time");
+    //         if (remainingTime > 0f )
+    //         {
+    //             remainingTime -= Time.deltaTime; 
                     
-            }
-            else
-            {
-                remainingTime = 0f;
-                if(score >= 20)
-                    score -= 20;
-                else
-                    score = 0;
-                Debug.Log("zaman tükkkkkk");
-                scoreText.text = score.ToString();
-                SelectNewQuestion();
-            }
-            int secondsRT = Mathf.FloorToInt(remainingTime % 60); // float olan remainingTime 60 ile mod alıp tavana yuvarlanıp seconds eşitleniyor.
+    //         }
+    //         else
+    //         {
+    //             remainingTime = 0f;
+    //             if(score >= 20)
+    //                 score -= 20;
+    //             else
+    //                 score = 0;
+    //             Debug.Log("zaman tükkkkkk");
+    //             scoreText.text = score.ToString();
+    //             SelectNewQuestion();
+    //         }
+    //         int secondsRT = Mathf.FloorToInt(remainingTime % 60); // float olan remainingTime 60 ile mod alıp tavana yuvarlanıp seconds eşitleniyor.
         
-            timerText.text = string.Format("{0:00}", secondsRT); // text olarak saniyeyi yazıyoruz.
-        }
-        else if (currentQuestion.category == "ZOR")
-        {
-            // Debug.Log("zor time");
-            if (remainingTimeDifficult > 0f )
-            {
-                remainingTimeDifficult -= Time.deltaTime; 
+    //         timerText.text = string.Format("{0:00}", secondsRT); // text olarak saniyeyi yazıyoruz.
+    //     }
+    //     else if (currentQuestion.category == "ZOR")
+    //     {
+    //         // Debug.Log("zor time");
+    //         if (remainingTimeDifficult > 0f )
+    //         {
+    //             remainingTimeDifficult -= Time.deltaTime; 
                     
-            }
-            else
-            {
-                remainingTimeDifficult = 0f;
-                if(score >= 20 )
-                    score -= 20;
-                else
-                    score = 0;
-                Debug.Log("zaman tükkkkkk");
-                scoreText.text = score.ToString();
-                SelectNewQuestion();
-            }
-            int seconds = Mathf.FloorToInt(remainingTimeDifficult % 60); // float olan remainingTime 60 ile mod alıp tavana yuvarlanıp seconds eşitleniyor.
+    //         }
+    //         else
+    //         {
+    //             remainingTimeDifficult = 0f;
+    //             if(score >= 20 )
+    //                 score -= 20;
+    //             else
+    //                 score = 0;
+    //             Debug.Log("zaman tükkkkkk");
+    //             scoreText.text = score.ToString();
+    //             SelectNewQuestion();
+    //         }
+    //         int seconds = Mathf.FloorToInt(remainingTimeDifficult % 60); // float olan remainingTime 60 ile mod alıp tavana yuvarlanıp seconds eşitleniyor.
         
-            timerText.text = string.Format("{0:00}", seconds); // text olarak saniyeyi yazıyoruz.
-        }
+    //         timerText.text = string.Format("{0:00}", seconds); // text olarak saniyeyi yazıyoruz.
+    //     }
         
-    }
-    public void isFinished()
-    {
+    // }
+    // public void isFinished()
+    // {
         
-        if(questionNumber == 21)
-        {
-            questionNumberText.text = "20/20";
-            finalScoreText.text = "Toplam Skor: " + score;
-            endGamePanel.SetActive(true);
-            Time.timeScale = 0;
-        }
-        else 
-            Time.timeScale = 1;
-    }
+    //     if(questionNumber == 21)
+    //     {
+    //         questionNumberText.text = "20/20";
+    //         finalScoreText.text = "Toplam Skor: " + score;
+    //         endGamePanel.SetActive(true);
+    //         Time.timeScale = 0;
+    //     }
+    //     else 
+    //         Time.timeScale = 1;
+    // }
 }
