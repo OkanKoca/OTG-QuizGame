@@ -62,8 +62,7 @@ public class CVStoSO
             string derivedName = questionData.question; // soruyu başka bir değişkene atıyoruz.
 
             // Remove invalid characters from the name
-            derivedName = derivedName.Replace("?", "").Replace("/", "").Replace(":", "").Replace("\"", "").Replace("ş", "s").Replace("ğ", "g") // soruda olan türkçe karakterler vs değiştiriliyor.
-            .Replace("ü", "u").Replace("ö", "o").Replace("ç", "c").Replace("ı", "i").Replace("I", "i").Replace(",", "").Replace("\n", " ").Replace(".", " ").Replace("'", "")
+            derivedName = derivedName.Replace("?", "").Replace("/", "").Replace(":", "").Replace("\"", " ").Replace("ş", "s").Replace("ğ", "g") // soruda olan türkçe karakterler vs değiştiriliyor.
             .Replace("ü", "u").Replace("ö", "o").Replace("ç", "c").Replace("ı", "i").Replace("I", "i").Replace(",", "").Replace("\n", " ").Replace(".", " ");
             // Assign the derived name to the ScriptableObject
             questionData.name = derivedName; // yeni soru ismi değiştrilmiş şekilde oluyor(scriptable object isimlendirmek için yani sorunun orijinali değişmiyor.)

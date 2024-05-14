@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
-  m_Name: SDG 5 hangi amaca denk gelmektedir
+  m_Name: Surdurulebilir Kalkinma Hedefleri ne zaman kabul edilmistir
   m_EditorClassIdentifier: 
-  question: SDG 5 hangi amaca denk gelmektedir?
-  category: KOLAY
+  question: "S\xFCrd\xFCr\xFClebilir Kalk\u0131nma Hedefleri ne zaman kabul edilmi\u015Ftir?"
+  category: ORTA
   answers:
-  - "Cinsiyet e\u015Fitli\u011Fi"
-  - Temiz su ve sanitasyon
-  - "Sa\u011Fl\u0131kl\u0131 bireyler"
-  - "Hedefler i\xE7in ortakl\u0131klar"
+  - 2015
+  - 1990
+  - 2000
+  - 2005

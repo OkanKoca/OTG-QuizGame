@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
-  m_Name: Seceneklerde verilen SDG ve eslestirmelerden hangisi hatalidir
+  m_Name: Seceneklerde verilen Surdurulebilir Kalkinma Amaclari ve eslestirmelerden
+    hangisi hatalidir
   m_EditorClassIdentifier: 
-  question: "Se\xE7eneklerde verilen SDG ve e\u015Fle\u015Ftirmelerden hangisi hatal\u0131d\u0131r?"
+  question: "Se\xE7eneklerde verilen S\xFCrd\xFCr\xFClebilir Kalk\u0131nma Ama\xE7lar\u0131
+    ve e\u015Fle\u015Ftirmelerden hangisi hatal\u0131d\u0131r?"
   category: KOLAY
   answers:
-  - "SDG 2-Nitelikli e\u011Fitim"
-  - "SDG 13-\u0130klim Eylemi"
-  - "SDG 1-Yoksullu\u011Fa Son"
-  - "SDG 5-Cinsiyet E\u015Fitli\u011Fi"
+  - "SKA 2-Nitelikli e\u011Fitim"
+  - "SKA 13-\u0130klim Eylemi"
+  - "SKA 1-Yoksullu\u011Fa Son"
+  - "SKA 5-Cinsiyet E\u015Fitli\u011Fi"

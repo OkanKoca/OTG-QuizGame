@@ -10,14 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
-  m_Name: Surdurulebilir Kalkinma Hedefi 4e yonelik ilerlemenin izlenmesinden oncelikli
-    olarak hangi BM kurumu sorumludur
+  m_Name: "Hangi iklim konferansi \u0130stanbul'da gerceklesmistir"
   m_EditorClassIdentifier: 
-  question: "S\xFCrd\xFCr\xFClebilir Kalk\u0131nma Hedefi 4'e y\xF6nelik ilerlemenin
-    izlenmesinden \xF6ncelikli olarak hangi BM kurumu sorumludur?"
+  question: "Hangi iklim konferans\u0131 \u0130stanbul'da ger\xE7ekle\u015Fmi\u015Ftir?"
   category: ZOR
   answers:
-  - UNESCO
-  - UNICEF
-  - WHO
-  - UNHCR
+  - Habitat II
+  - "Paris Anla\u015Fmas\u0131"
+  - "Rio Konferans\u0131"
+  - COP28

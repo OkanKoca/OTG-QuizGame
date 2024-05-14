@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: "Sakarya \xDCniversitesi 2023 yili Ui Greenmetric Turkiye \xDCniversiteler
     Siralamasinda kacinci sirada yer almistir "
   m_EditorClassIdentifier: 
-  question: "\"Sakarya \xDCniversitesi 2023 y\u0131l\u0131 \"\"UI Greenmetric T\xFCrkiye
-    \xDCniversiteler S\u0131ralamas\u0131\"\"nda ka\xE7\u0131nc\u0131 s\u0131rada
-    yer alm\u0131\u015Ft\u0131r? \""
+  question: "Sakarya \xDCniversitesi 2023 y\u0131l\u0131 UI Greenmetric T\xFCrkiye
+    \xDCniversiteler S\u0131ralamas\u0131nda ka\xE7\u0131nc\u0131 s\u0131rada yer
+    alm\u0131\u015Ft\u0131r? "
   category: ZOR
   answers:
   - 14

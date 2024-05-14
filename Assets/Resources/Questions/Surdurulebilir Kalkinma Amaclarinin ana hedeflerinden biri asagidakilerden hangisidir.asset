@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
-  m_Name: SDGlerin ana hedeflerinden biri asagidakilerden hangisidir
+  m_Name: Surdurulebilir Kalkinma Amaclarinin ana hedeflerinden biri asagidakilerden
+    hangisidir
   m_EditorClassIdentifier: 
-  question: "SDG'lerin ana hedeflerinden biri a\u015Fa\u011F\u0131dakilerden hangisidir?"
+  question: "S\xFCrd\xFCr\xFClebilir Kalk\u0131nma Ama\xE7lar\u0131n\u0131n ana hedeflerinden
+    biri a\u015Fa\u011F\u0131dakilerden hangisidir?"
   category: KOLAY
   answers:
   - "Yoksullu\u011Fun azalt\u0131lmas\u0131"

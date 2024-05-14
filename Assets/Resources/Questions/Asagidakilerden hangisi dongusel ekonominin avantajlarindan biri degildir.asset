@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
-  m_Name: "Asagidaki SDGlerden hangisi surdurulebilirligin \xC7evresel Boyutuna ait
-    degildir "
+  m_Name: Asagidakilerden hangisi dongusel ekonominin avantajlarindan biri degildir
   m_EditorClassIdentifier: 
-  question: "\"A\u015Fa\u011F\u0131daki SDG'lerden hangisi s\xFCrd\xFCr\xFClebilirli\u011Fin
-    \"\"\xC7evresel Boyut\"\"una ait de\u011Fildir? \""
+  question: "A\u015Fa\u011F\u0131dakilerden hangisi d\xF6ng\xFCsel ekonominin avantajlar\u0131ndan
+    biri de\u011Fildir?"
   category: KOLAY
   answers:
-  - "SDG2-A\xE7l\u0131\u011Fa Son"
-  - "SDG 13-\u0130klim Eylemi"
-  - "SDG14-Sudaki Ya\u015Fam"
-  - "SDG15-Karasal Ya\u015Fam"
+  - "Hammadde fiyatlar\u0131n\u0131 d\xFC\u015F\xFCrme"
+  - "At\u0131k miktar\u0131n\u0131 azaltma"
+  - "Yenilik\xE7ili\u011Fi te\u015Fvik etme"
+  - "Kaynaklar\u0131 daha verimli kullanma"

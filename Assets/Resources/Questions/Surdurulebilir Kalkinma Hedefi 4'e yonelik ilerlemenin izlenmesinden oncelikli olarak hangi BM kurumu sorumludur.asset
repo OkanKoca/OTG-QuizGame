@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4dcd51f9149da241a661624ea9c7d25, type: 3}
-  m_Name: SDGler (Surdurulebilir Kalkinma Hedefleri) ne zaman kabul edilmistir
+  m_Name: Surdurulebilir Kalkinma Hedefi 4'e yonelik ilerlemenin izlenmesinden oncelikli
+    olarak hangi BM kurumu sorumludur
   m_EditorClassIdentifier: 
-  question: "SDG'ler (S\xFCrd\xFCr\xFClebilir Kalk\u0131nma Hedefleri) ne zaman kabul
-    edilmi\u015Ftir?"
-  category: ORTA
+  question: "S\xFCrd\xFCr\xFClebilir Kalk\u0131nma Hedefi 4'e y\xF6nelik ilerlemenin
+    izlenmesinden \xF6ncelikli olarak hangi BM kurumu sorumludur?"
+  category: ZOR
   answers:
-  - 2015
-  - 1990
-  - 2000
-  - 2005
+  - UNESCO
+  - UNICEF
+  - WHO
+  - UNHCR
