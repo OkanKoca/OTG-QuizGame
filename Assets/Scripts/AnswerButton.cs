@@ -36,10 +36,12 @@ public class AnswerButton : MonoBehaviour
     {
         if (isCorrect)
         {
+            Debug.Log("assdasd");
             cb.pressedColor = correctColor;
         }
         else
         {
+            Debug.Log("ertyuı");
             cb.pressedColor = wrongColor;
         }
     }
